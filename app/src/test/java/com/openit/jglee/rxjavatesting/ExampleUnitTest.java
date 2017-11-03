@@ -12,6 +12,11 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+
+        int den =3;
+        for(int i=1;i<=9;i++){
+            System.out.println(den + "*"+i+"="+(den*i));
+        }
+        assertTrue(true);
     }
 }
