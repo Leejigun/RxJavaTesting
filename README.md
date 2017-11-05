@@ -44,6 +44,22 @@
 
       </code></pre>
 
+      * 특이 사항으로 jackOptions은 설정하고 하면 워밍이 발생하는데, 읽어보면 Java8에서는 jackOptions를 넣으면 동작하지 않는다는 경고문이다. 넣고하든 빼고 하든 동작은 되는데, 워밍을 없애기 위해 빼고 한다.
+
+        <pre><code>
+
+        ```
+        Warning:The Jack toolchain is deprecated and will not run. To enable support for Java 8 language features built into the plugin, remove 'jackOptions { ... }' from your build.gradle file, and add
+
+        android.compileOptions.sourceCompatibility 1.8
+        android.compileOptions.targetCompatibility 1.8
+
+        Future versions of the plugin will not support usage of 'jackOptions' in build.gradle.
+        To learn more, go to https://d.android.com/r/tools/java-8-support-message.html
+        ```
+
+        </code></pre>
+
    3. RxJava를 lamda식으로 코딩
 
       <pre><code>
@@ -110,7 +126,7 @@ btnMulti.setOnClickListener(view -> {
 });
 ```
 
- 	2.  예외처리 추가하기
+   	2.  예외처리 추가하기
 
 ```
 btnMulti.setOnClickListener(view -> {
@@ -154,3 +170,4 @@ btnMulti.setOnClickListener(view -> {
 * 예를 들어서 den 값은 처음에는 int의 숫자였지만 `(den, row) -> den+" * "+row+" = "+(den*row)+"\n")` 을 반복하는 동안 결과 값의 텍스트로 전환된다. 하지만 `(den, row) -> den+" * "+row+" = "+(den*row)+"\n")` 이 반복적으로 호출되는 동안에 처음 값의 den이 계속 필요한데 flatMap으로 해 놓으면 안에 데이터를 구할 수 있다. 이 같은 끼어들기(interleaving)을 허용 한다.
 
 * 끼어들기를 방지하는 concatMap도 있다고 한다.
+
