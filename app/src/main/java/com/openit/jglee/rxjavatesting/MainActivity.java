@@ -3,6 +3,7 @@ package com.openit.jglee.rxjavatesting;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnMulti =(Button)findViewById(R.id.btnMulti);
         EditText inputText = (EditText)findViewById(R.id.editText);
+
+        inputText.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        inputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if(i == EditorInfo.IME_ACTION_DONE)
+                {
+                    btnMulti.callOnClick();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         btnMulti.setOnClickListener(view -> {
             textView1.setText("");
