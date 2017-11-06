@@ -290,8 +290,9 @@ btnMulti.setOnClickListener(view -> {
 
 ### [방법 2] <a herf=http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/subjects/PublishSubject.html>PublishSubject 클래스</a>
 
-<pre><code>
 
+
+```
 PublishSubject<Object> subject = PublishSubject.creat();
 
 //Observable1 will receuve all onNext and OnComplete envents
@@ -303,8 +304,9 @@ subject.onNext("two");
 subject.subscribe(Observable2);
 subject.onNext("three");
 subject.onComplete();
+```
 
-</code></pre>
+
 
 * 실시간으로 런타임이 발생하고 그 때 구독한 구독자에게만 데이터가 전달됩니다. 차가운 Observable의 경우 지금 구독하던 10초 후에 구독하던 똑같은 데이터를 받을 수 있었지만, 이 경우 그 때 그 때 onNext로 다음으로 넘겨버리기 때문에 현재 구독중이지 않은 구독자는 데이터를 받 을 수 없습니다.
 * 이 형태는 그 순간 순간 다른 실시간 데이터를 전달하는 뜨거운 Observable의 형태와 동일합니다.
