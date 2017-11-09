@@ -1,10 +1,6 @@
 # RxJavaTesting
 
-본 페이지는https://academy.realm.io/kr/posts/mobilization-hugo-visser-rxjava-for-rest-of-us/를 학습하며 작성하였습니다. (android에서 RxJava 적용하기.)
-
-(http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/ - RxJava 기초)
-
-
+본 페이지는[android에서 RxJava 적용하기](https://academy.realm.io/kr/posts/mobilization-hugo-visser-rxjava-for-rest-of-us/),[RxJava 기초](http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/)를 학습하며 작성하였습니다.
 
 ## 필요성
 
@@ -13,7 +9,8 @@
    * 기존의 java 프로그래밍은 명령형에 가깝다.
    * 과거 프로젝트에서 비동기 통신의 병렬 처리에서 불편함을 느낀 경험이 있는데, 이에 좀 더 유용하다고 추천받아 RxJava를 학습하려 한다.
    * 비동기 통신의 병렬 처리에 대해서는 나 말고도 시연에서 많은 사람들이 트러블 슈팅으로 다룬 내용이기 때문에 RxJava의 필요성은 높다고 볼 수 있다.
-   * 반응형의 기본적인 틀은 [*Observable*은 아이템들을 발행(emit)하고, *Subscriber*는 이 아이템들을 소비한다(consume).] 이다. 이는 <a herf=https://ko.wikipedia.org/wiki/%EC%98%B5%EC%84%9C%EB%B2%84_%ED%8C%A8%ED%84%B4>옵저버 패턴</a>과 유사하며 발행/구독 모델로 알려져 있다.<br>
+   * 반응형의 기본적인 틀은 [*Observable*은 아이템들을 발행(emit)하고, *Subscriber*는 이 아이템들을 소비한다(consume).] 이다.
+     * [옵저버 패턴](https://ko.wikipedia.org/wiki/%EC%98%B5%EC%84%9C%EB%B2%84_%ED%8C%A8%ED%84%B4)
 2. RxJava와 함께 공부해야할 것들
 
    * RxJava에서는 java8에서 추가된 lamda express를 주로 사용하고 있다. 필수는 아닌 것 같지만 대부분의 RxJava 예제에서 lamda express를 사용하고 있으니 학습이 필요하다. 
@@ -22,7 +19,7 @@
 
 ## Lamda express의 예시
 
-1. 가장 쉬운 Rx(https://brunch.co.kr/@yudong/34 를 참고하였습니다.)
+1. [가장 쉬운 Rx](https://brunch.co.kr/@yudong/34)를 참고하였습니다.
 
    1. gradle 설정 ( https://github.com/ReactiveX/RxAndroid ) 여기서 최신 버전 확인
 
